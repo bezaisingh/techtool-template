@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-university"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Tech-Admin</div>
+        <div class="sidebar-brand-text mx-3">Admin Panel</div>
     </a>
 
     <!-- Divider -->
