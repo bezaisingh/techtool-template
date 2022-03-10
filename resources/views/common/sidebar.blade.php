@@ -38,6 +38,7 @@
                 <h6 class="collapse-header">User Management:</h6>
                 <a class="collapse-item" href="{{ route('users.index') }}">List</a>
                 <a class="collapse-item" href="{{ route('users.create') }}">Add New</a>
+                <a class="collapse-item" href="{{ route('users.account') }}">Add Account Details</a>
                 <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a>
             </div>
         </div>

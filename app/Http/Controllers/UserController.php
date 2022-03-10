@@ -84,6 +84,7 @@ class UserController extends Controller
                 'mobile_number' => $request->mobile_number,
                 'role_id'       => $request->role_id,
                 'status'        => $request->status,
+                'rt_age'        => $request->rt_age,
                 'password'      => Hash::make($request->first_name.'@'.$request->mobile_number)
             ]);
 
@@ -248,6 +249,13 @@ class UserController extends Controller
     public function export() 
     {
         return Excel::download(new UsersExport, 'users.xlsx');
+    }
+
+    public function account() 
+    {
+        $roles = Role::all();
+        return view('users.account-details')->with([
+            'roles' => $roles]);
     }
 
 }

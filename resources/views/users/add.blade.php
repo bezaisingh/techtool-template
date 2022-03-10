@@ -26,9 +26,41 @@
             <div class="card-body">
                 <div class="form-group row">
 
+                {{-- First Name --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Salutation</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="exampleFirstName"
+                            placeholder="First Name" 
+                            name="first_name" 
+                            value="{{ old('first_name') }}">
+
+                        @error('first_name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
                     {{-- First Name --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>First Name</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="exampleFirstName"
+                            placeholder="First Name" 
+                            name="first_name" 
+                            value="{{ old('first_name') }}">
+
+                        @error('first_name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
+                    {{-- First Name --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Middle Name</label>
                         <input 
                             type="text" 
                             class="form-control form-control-user @error('first_name') is-invalid @enderror" 
@@ -90,6 +122,164 @@
                         @enderror
                     </div>
 
+                    {{-- First Name --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Date of Birth</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="exampleFirstName"
+                            placeholder="First Name" 
+                            name="first_name" 
+                            value="{{ old('first_name') }}">
+
+                        @error('first_name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
+                    {{-- First Name --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Date Of Joining in AU</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="exampleFirstName"
+                            placeholder="First Name" 
+                            name="first_name" 
+                            value="{{ old('first_name') }}">
+
+                        @error('first_name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
+                    {{-- First Name --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Length Of Service(Auto fetch)</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="exampleFirstName"
+                            placeholder="First Name" 
+                            name="first_name" 
+                            value="{{ old('first_name') }}">
+
+                        @error('first_name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Retirement Age</label>
+                        <select class="form-control form-control-user" name="rt_age">
+                            <option selected disabled>Select Status</option>
+                            <option value="60">60</option>
+                            <option value="62">62</option>
+                            <option value="65">65</option>
+                        </select>
+                        <!-- @error('status') -->
+                            <!-- <span class="text-danger">{{$message}}</span> -->
+                        <!-- @enderror -->
+                    </div>
+
+                    {{-- First Name --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Date Of Retirement</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="exampleFirstName"
+                            placeholder="First Name" 
+                            name="first_name" 
+                            value="{{ old('first_name') }}">
+
+                        @error('first_name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
+                    {{-- First Name --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Month and Year Of Retirement</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="exampleFirstName"
+                            placeholder="First Name" 
+                            name="first_name" 
+                            value="{{ old('first_name') }}">
+
+                        @error('first_name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+                    
+
+                    {{-- First Name --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Basic Pay</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="exampleFirstName"
+                            placeholder="First Name" 
+                            name="first_name" 
+                            value="{{ old('first_name') }}">
+
+                        @error('first_name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
+                    {{-- First Name --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Increment 3%(Auto Fetch)</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="exampleFirstName"
+                            placeholder="First Name" 
+                            name="first_name" 
+                            value="{{ old('first_name') }}">
+
+                        @error('first_name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
+                    {{-- First Name --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Increment Month</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="exampleFirstName"
+                            placeholder="First Name" 
+                            name="first_name" 
+                            value="{{ old('first_name') }}">
+
+                        @error('first_name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
+                    {{-- First Name --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Current Basic</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="exampleFirstName"
+                            placeholder="First Name" 
+                            name="first_name" 
+                            value="{{ old('first_name') }}">
+
+                        @error('first_name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
                     {{-- Role --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Role</label>
@@ -107,7 +297,7 @@
                     {{-- Status --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Status</label>
-                        <select class="form-control form-control-user @error('status') is-invalid @enderror" name="status">
+                        <select class="form-control form-control-user" name="status">
                             <option selected disabled>Select Status</option>
                             <option value="1" selected>Active</option>
                             <option value="0">Inactive</option>
@@ -116,6 +306,8 @@
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
+
+
 
                 </div>
             </div>

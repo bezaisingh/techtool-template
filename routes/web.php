@@ -53,5 +53,7 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
 
     Route::get('export/', [UserController::class, 'export'])->name('export');
 
+    Route::get('/account', [UserController::class, 'account'])->name('account');
+
 });
 
