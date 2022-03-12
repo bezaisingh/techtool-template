@@ -71,6 +71,14 @@ class UserController extends Controller
             'mobile_number' => 'required|numeric|digits:10',
             'role_id'       =>  'required|exists:roles,id',
             'status'       =>  'required|numeric|in:0,1',
+            'salutation'    => 'required',
+            'dob'    => 'required',
+            'date_of_joining'    => 'required',
+            'retirement_age'    => 'required',
+            'date_of_retirement'    => 'required',
+            'basic_pay'    => 'required',
+            'current_basic'    => 'required',
+            
         ]);
 
         DB::beginTransaction();
@@ -78,10 +86,23 @@ class UserController extends Controller
 
             // Store Data
             $user = User::create([
+                'salutation'    => $request->salutation,
                 'first_name'    => $request->first_name,
+                'middle_name'    => $request->middle_name,
                 'last_name'     => $request->last_name,
                 'email'         => $request->email,
                 'mobile_number' => $request->mobile_number,
+                'dob' => $request->dob,
+                'date_of_joining' => $request->date_of_joining,
+                'length_of_service' => $request->length_of_service,
+
+                'retirement_age' => $request->retirement_age,
+                'date_of_retirement' => $request->date_of_retirement,
+                'month_and_year_of_retirement' => $request->month_and_year_of_retirement,
+                'basic_pay' => $request->basic_pay,
+                'increment_three' => $request->increment_three,
+                'increment_month' => $request->increment_month,
+                'current_basic' => $request->current_basic,
                 'role_id'       => $request->role_id,
                 'status'        => $request->status,
                 'rt_age'        => $request->rt_age,
