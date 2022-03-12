@@ -36,10 +36,18 @@ class UserController extends Controller
      * @return Array $user
      * @author Shani Singh
      */
-    public function index()
-    {
-        $users = User::with('roles')->paginate(10);
-        return view('users.index', ['users' => $users]);
+    public function index(Request $request)
+    {   
+        $filter = $request->query('filter');
+        if (!empty($filter)) {
+            $users = User::with('roles')->where('users.first_name', 'like', '%'.$filter.'%')->paginate(10);
+             
+        }else {
+            $users = User::with('roles')->paginate(10);
+        }
+        return view('users.index', ['users' => $users])->with('users', $users)->with('filter', $filter);
+    
+
     }
     
     /**
