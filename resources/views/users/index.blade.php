@@ -9,16 +9,22 @@
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Users</h1>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <a href="{{ route('users.create') }}" class="btn btn-sm btn-primary">
                         <i class="fas fa-plus"></i> Add New
                     </a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
+                    <a href="javascript:void(0)" class="btn btn-sm btn-primary mr-1"  onclick="toggleSmartSearch();"> <i class="fa fa-search"
+                        aria-hidden="true"></i> Search
+                        </a>
+                </div>
+                <div class="col-md-4">
                     <a href="{{ route('users.export') }}" class="btn btn-sm btn-success">
                         <i class="fas fa-check"></i> Export To Excel
                     </a>
                 </div>
+                
                 
             </div>
 
@@ -35,11 +41,20 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
+                    <div id="smartSearchFieldsDiv" style="display: none;">
+                       <form class="form-inline" method="GET">
+                       <div class="form-group mb-2">
+                        <label for="filter" class="col-sm-2 col-form-label">Name</label>
+                        <input type="text" class="form-control" id="filter" name="filter" placeholder="First name..." value="{{$filter}}">
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-primary mb-1" style="height: 37px;;">Filter</button>
+                      </form>
+                   </div>
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th width="20%">Name</th>
-                                <th width="25%">Email</th>
+                                <th width="25%">@sortablelink('email','Email')</th>
                                 <th width="15%">Mobile</th>
                                 <th width="15%">Role</th>
                                 <th width="15%">Status</th>
@@ -99,3 +114,9 @@
 @section('scripts')
     
 @endsection
+
+<script>
+    function toggleSmartSearch() {
+    $("#smartSearchFieldsDiv").toggle();
+}
+ </script>
