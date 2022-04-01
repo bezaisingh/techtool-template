@@ -456,109 +456,115 @@
                         @enderror
                     </div>
 
-                    {{-- First Name --}}
+                    {{-- Interest 8%(Edit) --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Interest 8%(Edit)</label>
                         <input 
                             type="text" 
                             class="form-control form-control-user @error('first_name') is-invalid @enderror" 
-                            id="exampleFirstName"
-                            placeholder="First Name" 
-                            name="first_name" 
-                            value="{{ old('first_name') }}">
+                            id="interest_long_term"
+                            placeholder="Interest" 
+                            name="interest_long_term" 
+                            value="{{ old('interest_long_term') }}">
 
-                        @error('first_name')
+                        @error('interest_long_term')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
 
-                    {{-- First Name --}}
+                    {{-- No. Of Installment(Maximum 150) --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>No. Of Installment(Maximum 150)</label>
                         <input 
                             type="text" 
                             class="form-control form-control-user @error('first_name') is-invalid @enderror" 
-                            id="exampleFirstName"
-                            placeholder="First Name" 
-                            name="first_name" 
-                            value="{{ old('first_name') }}">
+                            id="no_of_installment"
+                            placeholder="No. Of Installment" 
+                            name="no_of_installment" 
+                            value="{{ old('no_of_installment') }}">
 
-                        @error('first_name')
+                        @error('no_of_installment')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
 
-                    {{-- First Name --}}
+                    {{-- Principal(Reducing) --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Principal(Reducing)</label>
                         <input 
                             type="text" 
                             class="form-control form-control-user @error('first_name') is-invalid @enderror" 
-                            id="exampleFirstName"
-                            placeholder="First Name" 
-                            name="first_name" 
-                            value="{{ old('first_name') }}">
+                            id="principal_long_term"
+                            placeholder="Principal" 
+                            name="principal_long_term" 
+                            value="{{ old('principal_long_term') }}">
 
-                        @error('first_name')
+                        @error('principal_long_term')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
 
-                    {{-- Role --}}
+                    {{-- Interest --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Interest</label>
-                        <select class="form-control form-control-user @error('role_id') is-invalid @enderror" name="role_id">
-                            <option selected disabled>Select Role</option>
-                            @foreach ($roles as $role)
-                                <option value="{{$role->id}}">{{$role->name}}</option>
-                            @endforeach
-                        </select>
-                        @error('role_id')
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="interest_long_term"
+                            placeholder="Interest" 
+                            name="interest_long_term" 
+                            value="{{ old('interest_long_term') }}">
+
+                        @error('interest_long_term')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
 
-                    {{-- Status --}}
+                    {{-- Total Amount To Be Deducted from Salary --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
-                        <span style="color:red;">*</span>Total Amount To Be Deducted from Salary </label>
-                        <select class="form-control form-control-user" name="status">
-                            <option selected disabled>Select Status</option>
-                            <option value="1" selected>Active</option>
-                            <option value="0">Inactive</option>
-                        </select>
-                        @error('status')
+                        <span style="color:red;">*</span>Total Amount To Be Deducted from Salary</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-user @error('first_name') is-invalid @enderror" 
+                            id="total_amt_to_be_deduced_from_salary_long_term"
+                            placeholder="Total Amount To Be Deducted from Salary" 
+                            name="total_amt_to_be_deduced_from_salary_long_term" 
+                            value="{{ old('total_amt_to_be_deduced_from_salary_long_term') }}">
+
+                        @error('total_amt_to_be_deduced_from_salary_long_term')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
 
-                    {{-- First Name --}}
+
+                    {{-- Outstanding Balance --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Outstanding Balance</label>
                         <input 
                             type="text" 
                             class="form-control form-control-user @error('first_name') is-invalid @enderror" 
-                            id="exampleFirstName"
-                            placeholder="First Name" 
-                            name="first_name" 
-                            value="{{ old('first_name') }}">
+                            id="outstanding_balance_long_term"
+                            placeholder="Outstanding Balance" 
+                            name="outstanding_balance_long_term" 
+                            value="{{ old('outstanding_balance_long_term') }}">
 
-                        @error('first_name')
+                        @error('outstanding_balance_long_term')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
 
-                    {{-- First Name --}}
+                    {{-- Deduction List Print --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Deduction List Print</label>
                         <input 
                             type="text" 
                             class="form-control form-control-user @error('first_name') is-invalid @enderror" 
-                            id="exampleFirstName"
-                            placeholder="First Name" 
-                            name="first_name" 
-                            value="{{ old('first_name') }}">
+                            id="deduction_list_print_long_term"
+                            placeholder="Deduction List Print" 
+                            name="deduction_list_print_long_term" 
+                            value="{{ old('deduction_list_print_long_term') }}">
 
-                        @error('first_name')
+                        @error('deduction_list_print_long_term')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
