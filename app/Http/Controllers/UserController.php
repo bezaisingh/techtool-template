@@ -240,7 +240,7 @@ class UserController extends Controller
      * Delete User
      * @param User $user
      * @return Index Users
-     * @author Shani Singh
+     * @author Bijay Singh
      */
     public function delete(User $user)
     {
