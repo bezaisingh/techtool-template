@@ -14,7 +14,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h2 class="text-center mb-3">Welcome To Assam University Employee's Thrift and Credit Co-operative Society Ltd. Dashboard!</h2>
+            <h2 class="text-center mb-3">Welcome To Assam University Employee's Thrift and Credit Co-operative Society Ltd.</h2>
         </div>
     </div>
 
