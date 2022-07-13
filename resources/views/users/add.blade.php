@@ -29,13 +29,22 @@
                 {{-- Salutation --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Salutation</label>
-                        <input 
+                        <!-- <input 
                             type="text" 
                             class="form-control form-control-user @error('salutation') is-invalid @enderror" 
                             id="salutation"
                             placeholder="Salutation" 
                             name="salutation" 
-                            value="{{ old('salutation') }}">
+                            value="{{ old('salutation') }}"> -->
+
+                        <select class="form-control form-control-user" name="salutation">
+                            <option selected disabled>Select Salutation</option>
+                            <option value="4" selected>Prof.</option>
+                            <option value="3">Dr.</option>
+                            <option value="2">Mr.</option>
+                            <option value="1">Mrs.</option>
+                            <option value="0">Miss.</option>
+                        </select>
 
                         @error('salutation')
                             <span class="text-danger">{{$message}}</span>
@@ -172,13 +181,20 @@
 
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Retirement Age</label>
-                        <input 
+                        <!-- <input 
                             type="text" 
                             class="form-control form-control-user @error('retirement_age') is-invalid @enderror" 
                             id="retirement_age"
                             placeholder="Retirement Age" 
                             name="retirement_age" 
-                            value="{{ old('retirement_age') }}">
+                            value="{{ old('retirement_age') }}"> -->
+                            <select class="form-control form-control-user" name="retirement_age">
+                            <option selected disabled>Select Age</option>
+                            <option value="2" selected>60</option>
+                            <option value="1">62</option>
+                            <option value="0">65</option>
+                        </select>
+                            
                         @error('retirement_age')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
