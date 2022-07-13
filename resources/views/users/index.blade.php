@@ -55,7 +55,8 @@
                             <tr>
                                 <th width="20%">Name</th>
                                 <th width="25%">@sortablelink('email','Email')</th>
-                                <th width="15%">Mobile</th>
+                                <th width="15%">Mobile</th>                             
+                                <th width="15%">DOB</th>
                                 <th width="15%">Role</th>
                                 <th width="15%">Status</th>
                                 <th width="10%">Action</th>
@@ -67,6 +68,7 @@
                                     <td>{{ $user->full_name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->mobile_number }}</td>
+                                    <td>{{ $user->dob }}</td>
                                     <td>{{ $user->roles ? $user->roles->pluck('name')->first() : 'N/A' }}</td>
                                     <td>
                                         @if ($user->status == 0)
