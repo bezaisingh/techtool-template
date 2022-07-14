@@ -49940,3 +49940,33 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	
 /******/ })()
 ;
+
+function getLenthOfService(value){
+  var today = new Date();
+  var sel = new Date(value);
+  var yearDiff = today.getFullYear()-sel.getFullYear();
+  var monthDiff = today.getMonth()-sel.getMonth();
+  var dayDiff = today.getDate()-sel.getDate();
+  console.log("y:"+yearDiff)
+  console.log("m:"+monthDiff)
+  console.log("d:"+dayDiff)
+  var finalDiff= yearDiff+"Year "+monthDiff+"Month "+dayDiff+"Days";
+  console.log("final:"+finalDiff)
+  $("#length_of_service").val(finalDiff);
+
+}
+
+function getRetirementAge(value){
+  var dob = $("#dob").val();
+  if(dob == null || dob == ""){
+    alert("Please Select Date of Birth");
+  }else{
+  var rtAge = value;
+  var dob2 = new Date(dob);
+  var year = parseInt(dob2.getFullYear())+parseInt(rtAge);
+  var month = parseInt(dob2.getMonth())+1;
+  var rtDate = dob2.getDate()+"-"+month+"-"+year;
+  $("#date_of_retirement").val(rtDate);
+  $("#month_and_year_of_retirement").val(month+"-"+year);
+ }
+}
