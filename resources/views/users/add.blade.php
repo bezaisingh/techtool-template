@@ -39,11 +39,11 @@
 
                         <select class="form-control form-control-user" name="salutation">
                             <option selected disabled>Select Salutation</option>
-                            <option value="4" selected>Prof.</option>
-                            <option value="3">Dr.</option>
-                            <option value="2">Mr.</option>
-                            <option value="1">Mrs.</option>
-                            <option value="0">Miss.</option>
+                            <option value="Prof." selected>Prof.</option>
+                            <option value="Dr.">Dr.</option>
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mrs.">Mrs.</option>
+                            <option value="Miss.">Miss.</option>
                         </select>
 
                         @error('salutation')
@@ -150,7 +150,7 @@
                     {{-- Date Of Joining in AU --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Date Of Joining in AU</label>
-                        <input 
+                        <input onchange="getLenthOfService(this.value)"
                             type="date" 
                             class="form-control form-control-user @error('date_of_joining') is-invalid @enderror" 
                             id="date_of_joining"
@@ -172,7 +172,7 @@
                             id="length_of_service"
                             placeholder="Length Of Service" 
                             name="length_of_service" 
-                            value="{{ old('length_of_service') }}">
+                            value="{{ old('length_of_service') }}" readonly>
 
                         @error('length_of_service')
                             <span class="text-danger">{{$message}}</span>
@@ -188,11 +188,11 @@
                             placeholder="Retirement Age" 
                             name="retirement_age" 
                             value="{{ old('retirement_age') }}"> -->
-                            <select class="form-control form-control-user" name="retirement_age">
+                            <select class="form-control form-control-user" name="retirement_age"  onchange="getRetirementAge(this.value)">
                             <option selected disabled>Select Age</option>
-                            <option value="2" selected>60</option>
-                            <option value="1">62</option>
-                            <option value="0">65</option>
+                            <option value="60" selected>60</option>
+                            <option value="62">62</option>
+                            <option value="65">65</option>
                         </select>
                             
                         @error('retirement_age')
@@ -204,12 +204,12 @@
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Date Of Retirement</label>
                         <input 
-                            type="date" 
+                            type="text" 
                             class="form-control form-control-user @error('date_of_retirement') is-invalid @enderror" 
                             id="date_of_retirement"
                             placeholder="Date Of Retirement" 
                             name="date_of_retirement" 
-                            value="{{ old('date_of_retirement') }}">
+                            value="{{ old('date_of_retirement') }}" readonly>
 
                         @error('date_of_retirement')
                             <span class="text-danger">{{$message}}</span>
@@ -225,7 +225,7 @@
                             id="month_and_year_of_retirement"
                             placeholder="Month and Year Of Retirement" 
                             name="month_and_year_of_retirement" 
-                            value="{{ old('month_and_year_of_retirement') }}">
+                            value="{{ old('month_and_year_of_retirement') }}" readonly>
 
                         @error('month_and_year_of_retirement')
                             <span class="text-danger">{{$message}}</span>
