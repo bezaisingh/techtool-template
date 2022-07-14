@@ -76,6 +76,9 @@
                                         @endif
                                     </td>
                                     <td style="display: flex">
+                                        <a class="btn btn-success m-2" href="#" data-toggle="modal" data-target="#viewModal">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
                                         @if ($user->status == 0)
                                             <a href="{{ route('users.status', ['user_id' => $user->id, 'status' => 1]) }}"
                                                 class="btn btn-success m-2">
@@ -108,6 +111,7 @@
     </div>
 
     @include('users.delete-modal')
+    @include('users.view-modal')
 
 @endsection
 
