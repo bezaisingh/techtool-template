@@ -268,13 +268,19 @@
                     {{-- Increment Month --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Increment Month</label>
-                        <input 
+                        <!-- <input 
                             type="text" 
                             class="form-control form-control-user @error('increment_month') is-invalid @enderror" 
                             id="increment_month"
                             placeholder="Increment Month"
                             name="increment_month" 
-                            value="{{ old('increment_month') }}">
+                            value="{{ old('increment_month') }}"> -->
+
+                            <select class="form-control form-control-user" name="increment_month">
+                            <option selected disabled>Select Status</option>
+                            <option value="01-01" selected>1st January</option>
+                            <option value="01-07">1st July</option>
+                        </select>
 
                         @error('increment_month')
                             <span class="text-danger">{{$message}}</span>

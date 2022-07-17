@@ -49941,6 +49941,9 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ })()
 ;
 
+// 14-07-22 functions added later which was not in the original code
+
+// To Auto fetch Length of service
 function getLenthOfService(value){
   var today = new Date();
   var sel = new Date(value);
@@ -49950,12 +49953,12 @@ function getLenthOfService(value){
   console.log("y:"+yearDiff)
   console.log("m:"+monthDiff)
   console.log("d:"+dayDiff)
-  var finalDiff= yearDiff+"Year "+monthDiff+"Month "+dayDiff+"Days";
+  var finalDiff= yearDiff+" Year "+monthDiff+" Month "+dayDiff+" Days";
   console.log("final:"+finalDiff)
   $("#length_of_service").val(finalDiff);
-
 }
 
+// To Auto fetch Retirement Age and Date of Retirement
 function getRetirementAge(value){
   var dob = $("#dob").val();
   if(dob == null || dob == ""){
