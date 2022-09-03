@@ -1,5 +1,8 @@
 # techtool-template
 
+#The original template on github is given below.
+https://github.com/TechTool-India/techtool-laravel-admin
+
 The password to Login is firstname@phonenumber
     eg:
         
