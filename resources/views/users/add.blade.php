@@ -99,6 +99,41 @@
                         @enderror
                     </div>
 
+                    {{-- Designation --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Designation</label>
+                        <select class="form-control form-control-user" name="designation" id="designation">
+                            <option selected disabled>Select Salutation</option>
+                            <option value="VC">Vice Chancellor</option>
+                            <option value="DR">Deputy Registrar</option>
+                            <option value="AR">Assistant Registrar</option>
+                            <option value="PRO">Public Relation Officer</option>
+                            <option value="SO">Section Officer</option>
+                            <option value="ASST">Assistant</option>
+                            <option value="PS">Personal Secretary</option>
+                            <option value="UDC">Upper Division Clerk</option>
+                            <option value="LDC">Lower Division Clerk</option>
+                            <option value="JE">Junior Engineer</option>
+                            <option value="DRIVER">Driver</option>
+                            <option value="COOK">Cook</option>
+                            <option value="MTS">Multi Tasking Staff</option>
+                            <option value="G-OPTR">G-OPTR</option>
+                            <option value="SAFAI">Safai</option>
+                            <option value="MALI">Mali</option>
+                            <option value="K-ATTD">K-ATTD</option>
+                            <option value="SPA">SPA</option>
+                            <option value="PRASSTT">Public Relation Assistant</option>
+                            <option value="JLIBASSTT">Junior Library Assistant</option>
+                           
+
+
+                        </select>
+
+                        @error('designation')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
                     {{-- Email --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Email</label>
@@ -241,7 +276,7 @@
                             class="form-control form-control-user @error('basic_pay') is-invalid @enderror" 
                             id="basic_pay"
                             placeholder="Basic Pay" 
-                            name="basic_pay" 
+                            name="basic_pay" onchange="getIncrementAndCurrentBasic(this.value)"
                             value="{{ old('basic_pay') }}">
 
                         @error('basic_pay')
@@ -255,7 +290,7 @@
                         <input 
                             type="text" 
                             class="form-control form-control-user @error('increment_three') is-invalid @enderror" 
-                            id="increment_three"
+                            id="increment_three" readonly
                             placeholder="Increment 3%" 
                             name="increment_three" 
                             value="{{ old('increment_three') }}">
@@ -293,7 +328,7 @@
                         <input 
                             type="text" 
                             class="form-control form-control-user @error('current_basic') is-invalid @enderror" 
-                            id="current_basic"
+                            id="current_basic" readonly
                             placeholder="Current Basic" 
                             name="current_basic" 
                             value="{{ old('current_basic') }}">

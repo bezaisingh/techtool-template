@@ -3,7 +3,9 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-university"></i>
+            <!-- <i class="fas fa-university"></i> -->
+            <img src="{{ asset('images/auslogo.png') }}" style="width: 35px;">
+            
         </div>
         <div class="sidebar-brand-text mx-3">Admin Panel</div>
     </a>
@@ -37,8 +39,10 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">User Management:</h6>
                 <a class="collapse-item" href="{{ route('users.index') }}">List</a>
-                <a class="collapse-item" href="{{ route('users.create') }}">Add New</a>
+                <a class="collapse-item" href="{{ route('users.create') }}">Add New User</a>
                 <a class="collapse-item" href="{{ route('users.account') }}">Add Account Details</a>
+                <a class="collapse-item" href="{{ route('users.accounList') }}">Account Details</a>
+                <a class="collapse-item" href="{{ route('users.addLoan') }}">Add Loan Details</a>
                 <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a>
             </div>
         </div>
