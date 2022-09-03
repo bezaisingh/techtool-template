@@ -4,6 +4,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\LoanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +55,16 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
 
     Route::get('export/', [UserController::class, 'export'])->name('export');
 
-    Route::get('/account', [UserController::class, 'account'])->name('account');
+    //Acccount Details
+    Route::get('/account', [AccountController::class, 'account'])->name('account');
+    Route::post('/saveAccount', [AccountController::class, 'saveAccount'])->name('saveAccount');
+    Route::get('/accounList', [AccountController::class, 'accounList'])->name('accounList');
+
+    //Loan Details
+    Route::get('/addLoan', [LoanController::class, 'addLoan'])->name('addLoan');
+    Route::post('/saveShortTermLoan', [LoanController::class, 'saveShortTermLoan'])->name('saveShortTermLoan');
+    Route::post('/saveLongTermLoan', [LoanController::class, 'saveLongTermLoan'])->name('saveLongTermLoan');
+    
 
 });
 

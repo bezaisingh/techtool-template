@@ -14,7 +14,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h2 class="text-center mb-3">Welcome To Assam University Employee's Thrift and Credit Co-operative Society Ltd. Dashboard!</h2>
+            <h2 class="text-center mb-3">Welcome To Assam University Employee's Thrift and Credit Co-operative Society Ltd.</h2>
         </div>
     </div>
 
@@ -28,8 +28,8 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Dummy data</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">500</div>
+                                Total Users</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$userCount}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -46,8 +46,8 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Dummy Data</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">404</div>
+                                Total Accounts</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$accountCount}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -63,18 +63,18 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Short Term Loans
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$shortTermLoanCount}}</div>
                                 </div>
                                 <div class="col">
-                                    <div class="progress progress-sm mr-2">
+                                    <!-- <div class="progress progress-sm mr-2">
                                         <div class="progress-bar bg-info" role="progressbar"
                                             style="width: 50%" aria-valuenow="50" aria-valuemin="0"
                                             aria-valuemax="100"></div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -93,8 +93,8 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Dummy Data</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">404</div>
+                                Total Long Term Loans</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$longTermLoanCount}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-comments fa-2x text-gray-300"></i>

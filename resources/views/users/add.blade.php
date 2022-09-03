@@ -29,13 +29,22 @@
                 {{-- Salutation --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Salutation</label>
-                        <input 
+                        <!-- <input 
                             type="text" 
                             class="form-control form-control-user @error('salutation') is-invalid @enderror" 
                             id="salutation"
                             placeholder="Salutation" 
                             name="salutation" 
-                            value="{{ old('salutation') }}">
+                            value="{{ old('salutation') }}"> -->
+
+                        <select class="form-control form-control-user" name="salutation">
+                            <option selected disabled>Select Salutation</option>
+                            <option value="Prof." selected>Prof.</option>
+                            <option value="Dr.">Dr.</option>
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mrs.">Mrs.</option>
+                            <option value="Miss.">Miss.</option>
+                        </select>
 
                         @error('salutation')
                             <span class="text-danger">{{$message}}</span>
@@ -86,6 +95,41 @@
                             value="{{ old('last_name') }}">
 
                         @error('last_name')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
+                    {{-- Designation --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Designation</label>
+                        <select class="form-control form-control-user" name="designation" id="designation">
+                            <option selected disabled>Select Salutation</option>
+                            <option value="VC">Vice Chancellor</option>
+                            <option value="DR">Deputy Registrar</option>
+                            <option value="AR">Assistant Registrar</option>
+                            <option value="PRO">Public Relation Officer</option>
+                            <option value="SO">Section Officer</option>
+                            <option value="ASST">Assistant</option>
+                            <option value="PS">Personal Secretary</option>
+                            <option value="UDC">Upper Division Clerk</option>
+                            <option value="LDC">Lower Division Clerk</option>
+                            <option value="JE">Junior Engineer</option>
+                            <option value="DRIVER">Driver</option>
+                            <option value="COOK">Cook</option>
+                            <option value="MTS">Multi Tasking Staff</option>
+                            <option value="G-OPTR">G-OPTR</option>
+                            <option value="SAFAI">Safai</option>
+                            <option value="MALI">Mali</option>
+                            <option value="K-ATTD">K-ATTD</option>
+                            <option value="SPA">SPA</option>
+                            <option value="PRASSTT">Public Relation Assistant</option>
+                            <option value="JLIBASSTT">Junior Library Assistant</option>
+                           
+
+
+                        </select>
+
+                        @error('designation')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
@@ -141,7 +185,7 @@
                     {{-- Date Of Joining in AU --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Date Of Joining in AU</label>
-                        <input 
+                        <input onchange="getLenthOfService(this.value)"
                             type="date" 
                             class="form-control form-control-user @error('date_of_joining') is-invalid @enderror" 
                             id="date_of_joining"
@@ -163,7 +207,7 @@
                             id="length_of_service"
                             placeholder="Length Of Service" 
                             name="length_of_service" 
-                            value="{{ old('length_of_service') }}">
+                            value="{{ old('length_of_service') }}" readonly>
 
                         @error('length_of_service')
                             <span class="text-danger">{{$message}}</span>
@@ -172,13 +216,20 @@
 
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Retirement Age</label>
-                        <input 
+                        <!-- <input 
                             type="text" 
                             class="form-control form-control-user @error('retirement_age') is-invalid @enderror" 
                             id="retirement_age"
                             placeholder="Retirement Age" 
                             name="retirement_age" 
-                            value="{{ old('retirement_age') }}">
+                            value="{{ old('retirement_age') }}"> -->
+                            <select class="form-control form-control-user" name="retirement_age"  onchange="getRetirementAge(this.value)">
+                            <option selected disabled>Select Age</option>
+                            <option value="60" selected>60</option>
+                            <option value="62">62</option>
+                            <option value="65">65</option>
+                        </select>
+                            
                         @error('retirement_age')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
@@ -188,12 +239,12 @@
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Date Of Retirement</label>
                         <input 
-                            type="date" 
+                            type="text" 
                             class="form-control form-control-user @error('date_of_retirement') is-invalid @enderror" 
                             id="date_of_retirement"
                             placeholder="Date Of Retirement" 
                             name="date_of_retirement" 
-                            value="{{ old('date_of_retirement') }}">
+                            value="{{ old('date_of_retirement') }}" readonly>
 
                         @error('date_of_retirement')
                             <span class="text-danger">{{$message}}</span>
@@ -209,7 +260,7 @@
                             id="month_and_year_of_retirement"
                             placeholder="Month and Year Of Retirement" 
                             name="month_and_year_of_retirement" 
-                            value="{{ old('month_and_year_of_retirement') }}">
+                            value="{{ old('month_and_year_of_retirement') }}" readonly>
 
                         @error('month_and_year_of_retirement')
                             <span class="text-danger">{{$message}}</span>
@@ -225,7 +276,7 @@
                             class="form-control form-control-user @error('basic_pay') is-invalid @enderror" 
                             id="basic_pay"
                             placeholder="Basic Pay" 
-                            name="basic_pay" 
+                            name="basic_pay" onchange="getIncrementAndCurrentBasic(this.value)"
                             value="{{ old('basic_pay') }}">
 
                         @error('basic_pay')
@@ -239,7 +290,7 @@
                         <input 
                             type="text" 
                             class="form-control form-control-user @error('increment_three') is-invalid @enderror" 
-                            id="increment_three"
+                            id="increment_three" readonly
                             placeholder="Increment 3%" 
                             name="increment_three" 
                             value="{{ old('increment_three') }}">
@@ -252,13 +303,19 @@
                     {{-- Increment Month --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Increment Month</label>
-                        <input 
+                        <!-- <input 
                             type="text" 
                             class="form-control form-control-user @error('increment_month') is-invalid @enderror" 
                             id="increment_month"
                             placeholder="Increment Month"
                             name="increment_month" 
-                            value="{{ old('increment_month') }}">
+                            value="{{ old('increment_month') }}"> -->
+
+                            <select class="form-control form-control-user" name="increment_month">
+                            <option selected disabled>Select Status</option>
+                            <option value="01-01" selected>1st January</option>
+                            <option value="01-07">1st July</option>
+                        </select>
 
                         @error('increment_month')
                             <span class="text-danger">{{$message}}</span>
@@ -271,7 +328,7 @@
                         <input 
                             type="text" 
                             class="form-control form-control-user @error('current_basic') is-invalid @enderror" 
-                            id="current_basic"
+                            id="current_basic" readonly
                             placeholder="Current Basic" 
                             name="current_basic" 
                             value="{{ old('current_basic') }}">

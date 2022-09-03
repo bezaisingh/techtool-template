@@ -49940,3 +49940,71 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	
 /******/ })()
 ;
+
+// 14-07-22 functions added later which was not in the original code
+
+// To Auto fetch Length of service
+function getLenthOfService(value){
+  var today = new Date();
+  var sel = new Date(value);
+  var yearDiff = today.getFullYear()-sel.getFullYear();
+  var monthDiff = today.getMonth()-sel.getMonth();
+  var dayDiff = today.getDate()-sel.getDate();
+  console.log("y:"+yearDiff)
+  console.log("m:"+monthDiff)
+  console.log("d:"+dayDiff)
+  var finalDiff= yearDiff+" Year "+monthDiff+" Month "+dayDiff+" Days";
+  console.log("final:"+finalDiff)
+  $("#length_of_service").val(finalDiff);
+}
+
+// To Auto fetch Retirement Age and Date of Retirement
+function getRetirementAge(value){
+  var dob = $("#dob").val();
+  if(dob == null || dob == ""){
+    alert("Please Select Date of Birth");
+  }else{
+  var rtAge = value;
+  var dob2 = new Date(dob);
+  var year = parseInt(dob2.getFullYear())+parseInt(rtAge);
+  var month = parseInt(dob2.getMonth())+1;
+  var rtDate = dob2.getDate()+"-"+month+"-"+year;
+  $("#date_of_retirement").val(rtDate);
+  $("#month_and_year_of_retirement").val(month+"-"+year);
+ }
+}
+
+function getIncrementAndCurrentBasic(value){
+  var increment = (value*3)/100;
+  var currentBasic = parseInt(increment) + parseInt(value);
+  $("#increment_three").val(increment);
+  $("#current_basic").val(currentBasic);
+  // alert(increment);
+}
+
+function shortTerm() {
+  // Get the checkbox
+  var shortTermLoan = document.getElementById("shortTermLoanId");
+  var longTermLoan = document.getElementById("longTermLoanId");
+
+  if (shortTermLoan.checked == true){
+    document.getElementById("shortTermSection").style.display= "block";
+    document.getElementById("longTermSection").style.display= "none";
+    longTermLoan.checked=false;
+  }
+}
+
+  function longTerm() {
+    // Get the checkbox
+    var shortTermLoan = document.getElementById("shortTermLoanId");
+    var longTermLoan = document.getElementById("longTermLoanId");
+  
+    if (longTermLoan.checked == true){
+      document.getElementById("longTermSection").style.display= "block";
+      document.getElementById("shortTermSection").style.display= "none";
+      shortTermLoan.checked=false;
+    }
+}
+
+  
+  

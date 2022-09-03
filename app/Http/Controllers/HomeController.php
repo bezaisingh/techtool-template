@@ -28,9 +28,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        
+        $userCount=DB::table('users')->count();
+        $longTermLoanCount=DB::table('long_term_loans')->count();
+        $accountCount=DB::table('accounts')->count();
+        $shortTermLoanCount=DB::table('short_term_loans')->count();
+        return view('home',['userCount' => $userCount,'accountCount' => $accountCount,'longTermLoanCount' => $longTermLoanCount,'shortTermLoanCount' => $shortTermLoanCount]);
+       
     }
-
     /**
      * User Profile
      * @param Nill
