@@ -49973,3 +49973,38 @@ function getRetirementAge(value){
   $("#month_and_year_of_retirement").val(month+"-"+year);
  }
 }
+
+function getIncrementAndCurrentBasic(value){
+  var increment = (value*3)/100;
+  var currentBasic = parseInt(increment) + parseInt(value);
+  $("#increment_three").val(increment);
+  $("#current_basic").val(currentBasic);
+  // alert(increment);
+}
+
+function shortTerm() {
+  // Get the checkbox
+  var shortTermLoan = document.getElementById("shortTermLoanId");
+  var longTermLoan = document.getElementById("longTermLoanId");
+
+  if (shortTermLoan.checked == true){
+    document.getElementById("shortTermSection").style.display= "block";
+    document.getElementById("longTermSection").style.display= "none";
+    longTermLoan.checked=false;
+  }
+}
+
+  function longTerm() {
+    // Get the checkbox
+    var shortTermLoan = document.getElementById("shortTermLoanId");
+    var longTermLoan = document.getElementById("longTermLoanId");
+  
+    if (longTermLoan.checked == true){
+      document.getElementById("longTermSection").style.display= "block";
+      document.getElementById("shortTermSection").style.display= "none";
+      shortTermLoan.checked=false;
+    }
+}
+
+  
+  

@@ -53,19 +53,29 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th width="20%">Name</th>
-                                <th width="25%">@sortablelink('email','Email')</th>
-                                <th width="15%">Mobile</th>                             
-                                <th width="15%">DOB</th>
-                                <th width="15%">Role</th>
-                                <th width="15%">Status</th>
-                                <th width="10%">Action</th>
+                                <th >Name</th>
+                                <th >Designation</th>
+                                <th >Date Of Joining</th>
+                                <th >Length Of Service</th>
+                                <th >Retirement Age</th>
+                                <th >Date Of Retirement</th>
+                                <th >@sortablelink('email','Email')</th>
+                                <th >Mobile</th>                             
+                                <th >DOB</th>
+                                <th >Role</th>
+                                <th >Status</th>
+                                <th >Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
                                 <tr>
                                     <td>{{ $user->full_name }}</td>
+                                    <td>{{ $user->designation }}</td>
+                                    <td>{{ $user->date_of_joining }}</td>
+                                    <td>{{ $user->length_of_service }}</td>
+                                    <td>{{ $user->retirement_age }}</td>
+                                    <td>{{ $user->date_of_retirement }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->mobile_number }}</td>
                                     <td>{{ $user->dob }}</td>

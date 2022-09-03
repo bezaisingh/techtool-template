@@ -41,6 +41,7 @@ class User extends Authenticatable
         'status',
         'password',
         'rt_age',
+        'designation'
     ];
 
     /**
@@ -69,7 +70,7 @@ class User extends Authenticatable
      */
     public function getFullNameAttribute()
     {
-        return "{$this->first_name} {$this->last_name}";
+        return "{$this->salutation} {$this->first_name} {$this->middle_name} {$this->last_name}";
     }
 
     public $sortable = ['email'];
