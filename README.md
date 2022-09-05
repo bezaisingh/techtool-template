@@ -22,3 +22,13 @@ Note:
 5. Make database entry for compulsory data to be entered
 6. Add designation field to the Add User page
 7. Total will be auto fetched for the comulsory deposit section according to the photo.
+
+
+05-09-2022
+1. Add Account details 
+    a. Date column 
+    b. CD must be 5% of Basic Salary
+    d. addition of the data
+2. Loan Data Connection with user.
+
+3. Add Accoount details , DOJ in Society in user addition page
