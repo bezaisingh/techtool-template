@@ -41,7 +41,8 @@ class User extends Authenticatable
         'status',
         'password',
         'rt_age',
-        'designation'
+        'designation',
+        'date_of_membership_in_the_society'
     ];
 
     /**

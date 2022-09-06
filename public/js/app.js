@@ -50006,5 +50006,17 @@ function shortTerm() {
     }
 }
 
+function getDateAndCd(value) {
+  var users= $("#hiddenUser").val();
+  var obj = JSON.parse(users);
+  var filterdData = obj.filter(function (el) {
+    return el.id == value;
+  });
+  var domic=filterdData[0].date_of_membership_in_the_society;
+  $("#date_of_membership_in_the_society").val(domic);
+  console.log(domic);
+
+ }
+
   
   

@@ -30,7 +30,8 @@
                 {{-- User --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>User</label>
-                        <select class="form-control form-control-user" name="user">
+                        <input type="hidden" name="" id="hiddenUser" value="{{$users}}">
+                        <select class="form-control form-control-user" name="user" onchange="getDateAndCd(this.value)">
                             <option selected>Select User</option>
                             @foreach ($users as $item)
                             <option value="{{ $item->id }}">{{ $item->full_name }}</option>
@@ -50,7 +51,7 @@
                             id="date_of_membership_in_the_society"
                             placeholder="Date of Membership in the Society" 
                             name="date_of_membership_in_the_society" 
-                            value="{{ old('date_of_membership_in_the_society') }}">
+                            value="{{ old('date_of_membership_in_the_society') }}" readonly>
 
                         @error('date_of_membership_in_the_society')
                             <span class="text-danger">{{$message}}</span>

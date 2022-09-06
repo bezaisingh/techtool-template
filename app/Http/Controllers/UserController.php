@@ -115,7 +115,8 @@ class UserController extends Controller
                 'status'        => $request->status,
                 'rt_age'        => $request->rt_age,
                 'designation'   => $request->designation,
-                'password'      => Hash::make($request->first_name.'@'.$request->mobile_number)
+                'password'      => Hash::make($request->first_name.'@'.$request->mobile_number),
+                'date_of_membership_in_the_society' => $request ->date_of_membership_in_the_society
             ]);
 
             // Delete Any Existing Role

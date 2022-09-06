@@ -26,9 +26,9 @@ Note:
 
 05-09-2022
 1. Add Account details 
-    a. Date column 
+    a. Date column --done
     b. CD must be 5% of Basic Salary
     d. addition of the data
 2. Loan Data Connection with user.
 
-3. Add Accoount details , DOJ in Society in user addition page
+3. Add Accoount details , DOJ in Society in user addition page--Done

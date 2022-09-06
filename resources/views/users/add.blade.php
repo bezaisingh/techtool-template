@@ -364,6 +364,22 @@
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
+                    
+                    {{-- Date of Joining inth The Society --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>Date of Membership in the Society</label>
+                        <input 
+                            type="date" 
+                            class="form-control form-control-user @error('date_of_membership_in_the_society') is-invalid @enderror" 
+                            id="date_of_membership_in_the_society"
+                            placeholder="Date of Membership in the Society" 
+                            name="date_of_membership_in_the_society" 
+                            value="{{ old('date_of_membership_in_the_society') }}">
+
+                        @error('date_of_membership_in_the_society')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
 
 
 
