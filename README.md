@@ -32,3 +32,8 @@ Note:
 2. Loan Data Connection with user.
 
 3. Add Accoount details , DOJ in Society in user addition page
+
+06-09-22
+1. New User dashboard needs to be created so that individual can login and see only his details
+
+2. 
