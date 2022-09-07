@@ -171,7 +171,8 @@ class LoanController extends Controller
              'interest' => $request ->interest,
              'total_amt_to_be_deduced_from_salary' => $request ->total_amt_to_be_deduced_from_salary,
              'outstanding_balance' => $request ->outstanding_balance,
-             'deduction_list_print' => $request ->deduction_list_print
+             'deduction_list_print' => $request ->deduction_list_print,
+             'user' => $request ->user
          ]);
 
          // Delete Any Existing Role
@@ -238,7 +239,8 @@ class LoanController extends Controller
     public function addLoan() 
     {
         $roles = Role::all();
-        return view('users.add-loan-details')->with([
+        $users = User::all();
+        return view('users.add-loan-details',['users' => $users])->with([
             'roles' => $roles]);
     }
 
@@ -281,7 +283,8 @@ class LoanController extends Controller
              'interest_long_term' => $request ->interest_long_term,
              'total_amt_to_be_deduced_from_salary_long_term' => $request ->total_amt_to_be_deduced_from_salary_long_term,
              'outstanding_balance_long_term' => $request ->outstanding_balance_long_term,
-             'deduction_list_print_long_term' => $request ->deduction_list_print_long_term
+             'deduction_list_print_long_term' => $request ->deduction_list_print_long_term,
+             'user' => $request ->user
          ]);
 
          // Delete Any Existing Role

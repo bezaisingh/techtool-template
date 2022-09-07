@@ -50018,5 +50018,24 @@ function getDateAndCd(value) {
 
  }
 
+ function validateCd(value){
+  var userId = $("#userId").val();
+  var users= $("#hiddenUser").val();
+  var obj = JSON.parse(users);
+  var filterdData = obj.filter(function (el) {
+    return el.id == userId;
+  });
+ var basicSalary =  parseFloat(filterdData[0].basic_pay);
+ if(value<(basicSalary*5)/100){
+  var res=confirm("CD Should greater than equal to 5% of basic salary");
+  if (res == true) {
+    $("#compulsory_deposit").val("");
+   }else{
+    $("#compulsory_deposit").val("");
+   }
+ }
+//  alert(basicSalary);
+ }
+
   
   

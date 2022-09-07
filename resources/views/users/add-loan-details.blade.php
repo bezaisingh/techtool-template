@@ -57,6 +57,21 @@
                         @enderror
                     </div>
 
+                    {{-- User --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>User</label>
+                        <input type="hidden" name="" id="hiddenUser" value="{{$users}}">
+                        <select class="form-control form-control-user" id="userId1" name="user" onchange="getDateAndCd(this.value)">
+                            <option selected>Select User</option>
+                            @foreach ($users as $item)
+                            <option value="{{ $item->id }}">{{ $item->full_name }}</option>
+                            @endforeach
+                        </select>
+                        @error('user')
+                            <span class="text-danger" id="error_user">{{$message}}</span>
+                        @enderror
+                    </div>
+
                     {{-- Eligibility Criteria(1 Year from the Date of Membership) --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Eligibility Criteria(1 Year from the Date of Membership)</label>
@@ -283,6 +298,21 @@
 
                         @error('long_term_loan')
                             <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
+                    {{-- User --}}
+                    <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
+                        <span style="color:red;">*</span>User</label>
+                        <input type="hidden" name="" id="hiddenUser" value="{{$users}}">
+                        <select class="form-control form-control-user" id="userId2" name="user" onchange="getDateAndCd(this.value)">
+                            <option selected>Select User</option>
+                            @foreach ($users as $item)
+                            <option value="{{ $item->id }}">{{ $item->full_name }}</option>
+                            @endforeach
+                        </select>
+                        @error('user')
+                            <span class="text-danger" id="error_user">{{$message}}</span>
                         @enderror
                     </div>
 

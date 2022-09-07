@@ -33,7 +33,8 @@ class ShortTermLoan extends Authenticatable
         'interest',
         'total_amt_to_be_deduced_from_salary',
         'outstanding_balance',
-        'deduction_list_print'
+        'deduction_list_print',
+        'user'
     ];
 
     /**

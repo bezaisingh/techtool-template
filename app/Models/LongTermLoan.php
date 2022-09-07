@@ -33,7 +33,8 @@ class LongTermLoan extends Authenticatable
         'interest_long_term',
         'total_amt_to_be_deduced_from_salary_long_term',
         'outstanding_balance_long_term',
-        'deduction_list_print_long_term'
+        'deduction_list_print_long_term',
+        'user'
     ];
 
     /**

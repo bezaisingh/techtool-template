@@ -31,14 +31,14 @@
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>User</label>
                         <input type="hidden" name="" id="hiddenUser" value="{{$users}}">
-                        <select class="form-control form-control-user" name="user" onchange="getDateAndCd(this.value)">
+                        <select class="form-control form-control-user" id="userId" name="user" onchange="getDateAndCd(this.value)">
                             <option selected>Select User</option>
                             @foreach ($users as $item)
                             <option value="{{ $item->id }}">{{ $item->full_name }}</option>
                             @endforeach
                         </select>
                         @error('user')
-                            <span class="text-danger">{{$message}}</span>
+                            <span class="text-danger" id="error_user">{{$message}}</span>
                         @enderror
                     </div>
 
@@ -67,7 +67,7 @@
                             id="compulsory_deposit"
                             placeholder="Compulsory Deposit 5%" 
                             name="compulsory_deposit" 
-                            value="{{ old('compulsory_deposit') }}">
+                            value="{{ old('compulsory_deposit') }}" onchange="validateCd(this.value)">
 
                         @error('compulsory_deposit')
                             <span class="text-danger">{{$message}}</span>
