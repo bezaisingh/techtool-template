@@ -34,7 +34,11 @@ Note:
 3. Add Accoount details , DOJ in Society in user addition page--Done
 
 
-06-09-22
-1. New User dashboard needs to be created so that individual can login and see only his details
+06-09-2022
+1. New User dashboard needs to be created so that individual can login and see only his details.
+
+07-09-2022
+1. Data needs to be displayed in admin panel.
+
 
 
