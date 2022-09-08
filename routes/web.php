@@ -65,6 +65,10 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
     Route::post('/saveShortTermLoan', [LoanController::class, 'saveShortTermLoan'])->name('saveShortTermLoan');
     Route::post('/saveLongTermLoan', [LoanController::class, 'saveLongTermLoan'])->name('saveLongTermLoan');
     
+    //report/consolidated data
+    Route::get('/report', [UserController::class, 'report'])->name('report');
 
+        //for specific user
+        Route::get('/myUser', [UserController::class, 'myUser'])->name('myUser');
 });
 

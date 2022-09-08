@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -282,5 +283,30 @@ class UserController extends Controller
         return Excel::download(new UsersExport, 'users.xlsx');
     }
     
+
+    //following method is for display consolidated data
+    public function report() 
+    {
+        $roles = Role::all();
+        $users = User::all();
+        $data = DB::table('users')
+        ->join('accounts', 'users.id', '=', 'accounts.users_id')// joining the contacts table , where user_id and contact_user_id are same
+        ->join('loans_dummy', 'users.id', '=','loans_dummy.users' )
+        ->select('users.*', 'accounts.*','loans_dummy.*')->paginate(10);
+
+
+        return view('users.report',['data' => $data])->with([
+            'roles' => $roles]);
+    }
+
+    public function myUser() 
+    {
+        $roles = Role::all();
+        $id = Auth::user()->id;
+        $users = User::all();
+   
+        return view('users.my-user',['users' => $users])->with([
+            'roles' => $roles]);
+    }
 
 }

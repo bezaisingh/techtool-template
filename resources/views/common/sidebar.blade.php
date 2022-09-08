@@ -44,6 +44,10 @@
                 <a class="collapse-item" href="{{ route('users.accounList') }}">Account Details</a>
                 <a class="collapse-item" href="{{ route('users.addLoan') }}">Add Loan Details</a>
                 <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a>
+                <a class="collapse-item" href="{{ route('users.report') }}">Report Data</a>
+                @hasrole('Admin')
+                <a class="collapse-item" href="{{ route('users.myUser') }}">My Profile</a>
+                @endhasrole
             </div>
         </div>
     </li>
