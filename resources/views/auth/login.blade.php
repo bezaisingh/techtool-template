@@ -59,7 +59,7 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="">New Register?</a>
+                                <a class="small" href="register">New Register?</a>
                             </div>
                             <div class="text-center">
                                 <a class="small" href="{{route('password.request')}}">Forgot Password?</a>

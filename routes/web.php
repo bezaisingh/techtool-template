@@ -27,7 +27,7 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -77,5 +77,10 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
         Route::get('/myUser', [UserController::class, 'myUser'])->name('myUser');
         Route::get('/addMyUser', [UserController::class, 'addMyUser'])->name('addMyUser');
         Route::get('/signUp', [RegisterController::class, 'addMyUser'])->name('signUp');
+
+        //Added on 18th september by bijay
+            Route::get('/register', function () {
+                return view('register');
+            });
 });
 
