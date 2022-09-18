@@ -27,6 +27,7 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+//Changed from false to true on 18th september by bijay
 Auth::routes(['register' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
