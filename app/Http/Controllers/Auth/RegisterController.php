@@ -70,4 +70,12 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function addMyUser()
+    {
+        $roles = Role::all();
+       
+        return view('auth.add-my-user', ['roles' => $roles]);
+    }
+
 }

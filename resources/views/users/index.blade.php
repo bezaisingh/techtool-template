@@ -136,3 +136,15 @@
     $("#smartSearchFieldsDiv").toggle();
 }
  </script>
+
+<script type="text/javascript">
+    function getAndSetName() {
+    var name= $("#nameId").html();
+    $("#profileNAmeId").html(name);
+    console.log(name);
+
+    }
+ window.onload = getAndSetName;
+
+
+ </script>

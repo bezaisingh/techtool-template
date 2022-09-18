@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\LoanController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,5 +71,7 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
 
         //for specific user
         Route::get('/myUser', [UserController::class, 'myUser'])->name('myUser');
+        Route::get('/addMyUser', [UserController::class, 'addMyUser'])->name('addMyUser');
+        Route::get('/signUp', [RegisterController::class, 'addMyUser'])->name('signUp');
 });
 

@@ -3,6 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
+@hasrole('Admin')
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -108,4 +109,5 @@
     
 
 </div>
+@endhasrole
 @endsection

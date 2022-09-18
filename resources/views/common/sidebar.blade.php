@@ -7,7 +7,12 @@
             <img src="{{ asset('images/auslogo.png') }}" style="width: 35px;">
             
         </div>
+        @hasrole('Admin')
         <div class="sidebar-brand-text mx-3">Admin Panel</div>
+        @endhasrole
+        @hasrole('User')
+        <div class="sidebar-brand-text mx-3">User Panel</div>
+        @endhasrole
     </a>
 
     <!-- Divider -->
@@ -38,6 +43,7 @@
         <div id="taTpDropDown" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">User Management:</h6>
+                @hasrole('Admin')
                 <a class="collapse-item" href="{{ route('users.index') }}">List</a>
                 <a class="collapse-item" href="{{ route('users.create') }}">Add New User</a>
                 <a class="collapse-item" href="{{ route('users.account') }}">Add Account Details</a>
@@ -45,8 +51,10 @@
                 <a class="collapse-item" href="{{ route('users.addLoan') }}">Add Loan Details</a>
                 <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a>
                 <a class="collapse-item" href="{{ route('users.report') }}">Report Data</a>
-                @hasrole('Admin')
+                @endhasrole
+                @hasrole('User')
                 <a class="collapse-item" href="{{ route('users.myUser') }}">My Profile</a>
+                <a class="collapse-item" href="{{ route('users.addMyUser') }}">Add My Profile</a>
                 @endhasrole
             </div>
         </div>

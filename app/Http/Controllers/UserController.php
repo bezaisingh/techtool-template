@@ -299,14 +299,31 @@ class UserController extends Controller
             'roles' => $roles]);
     }
 
-    public function myUser() 
+
+    public function addMyUser()
     {
         $roles = Role::all();
-        $id = Auth::user()->id;
-        $users = User::all();
-   
-        return view('users.my-user',['users' => $users])->with([
-            'roles' => $roles]);
+       
+        return view('users.add-my-user', ['roles' => $roles]);
     }
+
+
+        public function myUser(Request $request) 
+        {
+            $filter = $request->query('filter');
+             $id = Auth::user()->id;
+             \Log::info('this is id');
+             info('This is some useful information.');
+            // if (!empty($filter)) {
+            //     $users = User::with('roles')->where('users.first_name', 'like', '%'.$filter.'%')->paginate(10);
+                 
+            // }else {
+                $users = User::with('roles')->where('users.id', '=', $id)->paginate(10);
+                
+            // }
+            return view('users.my-user', ['users' => $users])->with('users', $users)->with('filter', $filter);
+        }
+
+       
 
 }

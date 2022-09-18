@@ -6,6 +6,7 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
+@hasrole('Admin')
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Users</h1>
             <div class="row">
@@ -29,14 +30,14 @@
             </div>
 
         </div>
-
+ @endhasrole
         {{-- Alert Messages --}}
         @include('common.alert')
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">All Users</h6>
+                <h6 class="m-0 font-weight-bold text-primary">My Details</h6>
 
             </div>
             <div class="card-body">
@@ -55,14 +56,16 @@
                                 <th >Mobile</th>                             
                                 <th >DOB</th>
                                 <th >Role</th>
+                                @hasrole('Admin')
                                 <th >Status</th>
+                                @endhasrole
                                 <th >Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $user->full_name }}</td>
+                                    <td id="nameId">{{ $user->full_name }}</td>
                                     <td>{{ $user->designation }}</td>
                                     <td>{{ $user->date_of_joining }}</td>
                                     <td>{{ $user->length_of_service }}</td>
@@ -72,6 +75,7 @@
                                     <td>{{ $user->mobile_number }}</td>
                                     <td>{{ $user->dob }}</td>
                                     <td>{{ $user->roles ? $user->roles->pluck('name')->first() : 'N/A' }}</td>
+                                    @hasrole('Admin')
                                     <td>
                                         @if ($user->status == 0)
                                             <span class="badge badge-danger">Inactive</span>
@@ -79,10 +83,13 @@
                                             <span class="badge badge-success">Active</span>
                                         @endif
                                     </td>
+                                    @endhasrole
                                     <td style="display: flex">
+                                    @hasrole('Admin')
                                         <a class="btn btn-success m-2" href="#" data-toggle="modal" data-target="#viewModal">
                                             <i class="fas fa-eye"></i>
                                         </a>
+                                      
                                         @if ($user->status == 0)
                                             <a href="{{ route('users.status', ['user_id' => $user->id, 'status' => 1]) }}"
                                                 class="btn btn-success m-2">
@@ -94,13 +101,16 @@
                                                 <i class="fa fa-ban"></i>
                                             </a>
                                         @endif
+                                    @endhasrole
                                         <a href="{{ route('users.edit', ['user' => $user->id]) }}"
                                             class="btn btn-primary m-2">
                                             <i class="fa fa-pen"></i>
                                         </a>
+                                        @hasrole('Admin')
                                         <a class="btn btn-danger m-2" href="#" data-toggle="modal" data-target="#deleteModal">
                                             <i class="fas fa-trash"></i>
                                         </a>
+                                        @endhasrole
                                     </td>
                                 </tr>
                             @endforeach
@@ -123,8 +133,18 @@
     
 @endsection
 
-<script>
+<script type="text/javascript">
     function toggleSmartSearch() {
     $("#smartSearchFieldsDiv").toggle();
-}
+    }
+
+    function getAndSetName() {
+    var name= $("#nameId").html();
+    $("#profileNAmeId").html(name);
+    console.log(name);
+
+    }
+ window.onload = getAndSetName;
+
+
  </script>
