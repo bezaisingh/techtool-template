@@ -50066,6 +50066,10 @@ function getDateAndCd(value) {
     alert(otp);
  }
 
+ function verifyOTP(){
+    alert('Not Verified');
+ }
+
 
   
   
