@@ -70,6 +70,7 @@
                                 @enderror
                             </div>
                         </div>
+
                         {{-- Email --}}
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('E-Mail Address') }}</label>
@@ -103,12 +104,14 @@
                         {{-- Send OTP --}}
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <input type="button" class="btn btn-primary" onclick="send_otp();">
+                                <button type="send_otp" class="btn btn-primary" name='btn_send_otp' id="send_otp">
                                     {{ __('Send OTP') }}
-                                </input>
+                                </button>
                             </div>
                         </div>
+                        <div><a href="/send_otp">Send OTP</a></div>
                         <br>
+
 
                         {{-- Enter OTP --}}
                         <div class="row mb-3">
@@ -126,6 +129,7 @@
                         </div>
 
 
+                    {{-- Password --}}
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 

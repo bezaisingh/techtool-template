@@ -81,4 +81,9 @@ class RegisterController extends Controller
         return view('auth.add-my-user', ['roles' => $roles]);
     }
 
+    public function send_otp()
+    {
+            return ("Hello");
+    }
+
 }
