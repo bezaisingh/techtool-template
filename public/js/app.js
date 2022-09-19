@@ -50039,6 +50039,28 @@ function getDateAndCd(value) {
 
  }
 
+ //added on 19th September by bijay
+ //for sending otp
+ function send_otp(){
+  $(".error").html("").hide();
+  var number = $("#mobile").val();
+  if (number.length ==10 && number !=null){
+    var input = {
+      "mobile_number": number,
+      "action": "send_otp"
+    };
+    $.ajax({
+      url  : 'controller.php',
+      type : 'POST',
+      data : function(response){
+      }
+    });
+  } else {
+    $(".error").html('Please enter a valid number')
+    $("error").show();
+  }
+ }
+
 
   
   
