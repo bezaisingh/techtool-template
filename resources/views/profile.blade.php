@@ -45,6 +45,7 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
+
                             <div class="col-md-4">
                                 <label class="labels">Last Name</label>
                                 <input type="text" name="last_name"
@@ -109,6 +110,45 @@
                         </div>
                     </form>
                 </div>
+
+                <hr>
+                {{-- Bank Details --}}
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Bank Details</h4>
+                    </div>
+
+                    <form action="#" method="POST">
+                        @csrf
+                        <div class="row mt-2">
+                            <div class="col-md-4">
+                                <label class="labels">Bank Name</label>
+                                <input type="text" name="bankName" class="form-control @error('bankName') is-invalid @enderror" placeholder="Bank Name" required>
+                                @error('bankName')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4">
+                                <label class="labels">Account Number</label>
+                                <input type="number" name="account_number" class="form-control @error('account_number') is-invalid @enderror" required placeholder="Account Number">
+                                @error('account_number')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4">
+                                <label class="labels">IFS Code</label>
+                                <input type="text" name="ifsc" class="form-control @error('ifsc') is-invalid @enderror" required placeholder="IFS Code">
+                                @error('ifsc')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="mt-5 text-center">
+                            <button class="btn btn-success profile-button" type="submit">Update Bank Details</button>
+                        </div>
+                    </form>
+
+
             </div>
 
         </div>

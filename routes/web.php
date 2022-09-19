@@ -78,6 +78,7 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
         Route::get('/myUser', [UserController::class, 'myUser'])->name('myUser');
         Route::get('/addMyUser', [UserController::class, 'addMyUser'])->name('addMyUser');
         Route::get('/signUp', [RegisterController::class, 'addMyUser'])->name('signUp');
+        
         Route::get('/send_otp', [RegisterController::class, 'send_otp'])->name('send_otp');
 
         //Added on 18th september by bijay

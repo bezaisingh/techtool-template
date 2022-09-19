@@ -71,6 +71,25 @@
                             </div>
                         </div>
 
+                        {{-- Gender --}}
+                    <div class="row mb-3">
+                    <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('Gender') }}</label>
+
+                        <!-- <span style="color:red;"></span>Gender</label> -->
+                        <div class="col-md-6">
+                            <select class="form-control form-control-user" name="gender">
+                                <option selected disabled>Select Gender</option>
+                                <option value="Male" >Male</option>
+                                <option value="Female" >Female</option>
+                                <option value="Transgender" >Transgender</option>
+
+                            </select>
+                        </div>
+                        @error('gender')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
                         {{-- Email --}}
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('E-Mail Address') }}</label>
@@ -109,7 +128,6 @@
                                 </button>
                             </div>
                         </div>
-                        <div><a href="/send_otp">Send OTP</a></div>
                         <br>
 
 
@@ -127,6 +145,17 @@
                                 @enderror
                             </div>
                         </div>
+                    
+                        {{-- Verify OTP --}}
+                        <div class="row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="verify_otp" class="btn btn-primary" name='btn_verify_otp' id="verify_otp">
+                                    {{ __('Verify') }}
+                                </button>
+                            </div>
+                        </div>
+                        <br>   
+                        
 
 
                     {{-- Password --}}
@@ -151,6 +180,8 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        <input id="role_id" type="text" class="form-control" name="role_id" value='2' required autocomplete="role_id" hidden>
 
                         
                         <div class="row mb-0">

@@ -6,7 +6,7 @@
 <div class="row justify-content-center">
 
     <div class="text-center mt-5">
-        <h1 class="text-white">AUET & CCS Admin Panel</h1>
+        <h1 class="text-white">AUET & CCS Login Panel</h1>
     </div>
 
     <div class="col-xl-10 col-lg-12 col-md-9">
@@ -72,7 +72,7 @@
     </div>
     
     <div class="text-center mt-5">
-        <h6 class="text-white">Developed By : <a class="text-white" href="#">AUET & CCS</a></h6>
+        <h6 class="text-white">Developed By : <a class="text-white" href="#">jumbo.1518@rediffmail.com</a></h6>
     </div>
 
 </div>

@@ -71,6 +71,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'mobile_number' => $data['mobile_number'],
             'password' => Hash::make($data['password']),
+            'role_id'=>$data['role_id'],
         ]);
     }
 
@@ -81,6 +82,7 @@ class RegisterController extends Controller
         return view('auth.add-my-user', ['roles' => $roles]);
     }
 
+    //added on 19th September 2022 USELESS
     public function send_otp()
     {
             return ("Hello");
