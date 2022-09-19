@@ -123,9 +123,12 @@
                         {{-- Send OTP --}}
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="send_otp" class="btn btn-primary" name='btn_send_otp' id="send_otp">
+
+                            <input type="button" class="btnSubmit" value="Send OTP"	onClick="sendOTP();">
+	
+                                <!-- <button type="send_otp" class="btn btn-primary" onClick="sendOTP();" name='btn_send_otp' id="send_otp">
                                     {{ __('Send OTP') }}
-                                </button>
+                                </button> -->
                             </div>
                         </div>
                         <br>
@@ -149,9 +152,11 @@
                         {{-- Verify OTP --}}
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="verify_otp" class="btn btn-primary" name='btn_verify_otp' id="verify_otp">
+                            <input type="button" class="btnSubmit" value="Verify OTP"	onClick="verifyOTP();">
+
+                                <!-- <button type="verify_otp" class="btn btn-primary" name='btn_verify_otp' id="verify_otp">
                                     {{ __('Verify') }}
-                                </button>
+                                </button> -->
                             </div>
                         </div>
                         <br>   

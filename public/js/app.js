@@ -50061,6 +50061,11 @@ function getDateAndCd(value) {
   }
  }
 
+ function sendOTP(){
+  var otp=Math.floor((Math.random() * 9999) + 1000);
+    alert(otp);
+ }
+
 
   
   
