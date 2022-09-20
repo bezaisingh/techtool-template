@@ -39,7 +39,7 @@
 
                         <select class="form-control form-control-user" name="salutation">
                             <option selected disabled>Select Salutation</option>
-                            <option value="Prof." selected>Prof.</option>
+                            <option value="Prof.">Prof.</option>
                             <option value="Dr.">Dr.</option>
                             <option value="Mr.">Mr.</option>
                             <option value="Mrs.">Mrs.</option>
@@ -103,7 +103,7 @@
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Designation</label>
                         <select class="form-control form-control-user" name="designation" id="designation">
-                            <option selected disabled>Select Salutation</option>
+                            <option selected disabled>Select Designation</option>
                             <option value="VC">Vice Chancellor</option>
                             <option value="DR">Deputy Registrar</option>
                             <option value="AR">Assistant Registrar</option>
@@ -225,7 +225,7 @@
                             value="{{ old('retirement_age') }}"> -->
                             <select class="form-control form-control-user" name="retirement_age"  onchange="getRetirementAge(this.value)">
                             <option selected disabled>Select Age</option>
-                            <option value="60" selected>60</option>
+                            <option value="60">60</option>
                             <option value="62">62</option>
                             <option value="65">65</option>
                         </select>
