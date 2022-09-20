@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Add Users')
+@section('title', 'Update User Details')
 
 @section('content')
 
@@ -8,7 +8,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Add Users</h1>
+        <h1 class="h3 mb-0 text-gray-800">Update User Details</h1>
         <a href="{{route('users.index')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-arrow-left fa-sm text-white-50"></i> Back</a>
     </div>
@@ -19,7 +19,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Add New User</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Update User Details</h6>
         </div>
         <form method="POST" action="{{route('users.store')}}">
             @csrf
@@ -29,17 +29,9 @@
                 {{-- Salutation --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Salutation</label>
-                        <!-- <input 
-                            type="text" 
-                            class="form-control form-control-user @error('salutation') is-invalid @enderror" 
-                            id="salutation"
-                            placeholder="Salutation" 
-                            name="salutation" 
-                            value="{{ old('salutation') }}"> -->
-
                         <select class="form-control form-control-user" name="salutation">
                             <option selected disabled>Select Salutation</option>
-                            <option value="Prof." selected>Prof.</option>
+                            <option value="Prof.">Prof.</option>
                             <option value="Dr.">Dr.</option>
                             <option value="Mr.">Mr.</option>
                             <option value="Mrs.">Mrs.</option>
@@ -225,7 +217,7 @@
                             value="{{ old('retirement_age') }}"> -->
                             <select class="form-control form-control-user" name="retirement_age"  onchange="getRetirementAge(this.value)">
                             <option selected disabled>Select Age</option>
-                            <option value="60" selected>60</option>
+                            <option value="60">60</option>
                             <option value="62">62</option>
                             <option value="65">65</option>
                         </select>
@@ -283,7 +275,7 @@
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-
+@hasrole('Admin')   <!-- added has role on 20th september to hide increment for user -->
                     {{-- Increment 3%(Auto Fetch) --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Increment 3%(Auto Fetch)</label>
@@ -300,6 +292,7 @@
                         @enderror
                     </div>
 
+@endhasrole
                     {{-- Increment Month --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Increment Month</label>
@@ -312,8 +305,8 @@
                             value="{{ old('increment_month') }}"> -->
 
                             <select class="form-control form-control-user" name="increment_month">
-                            <option selected disabled>Select Status</option>
-                            <option value="01-01" selected>1st January</option>
+                            <option selected disabled>Select Increment Month</option>
+                            <option value="01-01">1st January</option>
                             <option value="01-07">1st July</option>
                         </select>
 
@@ -321,7 +314,8 @@
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-
+                    
+@hasrole('Admin') <!-- added has role on 20th september to hide current basic for user -->
                     {{-- Current Basic --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Current Basic</label>
@@ -337,7 +331,7 @@
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
-
+@endhasrole
                     {{-- Role --}}
                     <div class="col-sm-6 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Role</label>
