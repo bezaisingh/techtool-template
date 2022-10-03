@@ -42,3 +42,48 @@ Note:
 
 
 
+*************************************************************************************************************
+
+Tech-Admin | Laravel 8 + Bootstrap 4
+Tech-Admin is Admin Panel With Preset of Roles, Permissions, ACL, User Management, Profile Management.
+
+Features
+Mobile Responsive Bootstrap 4 Design
+User Management with Roles
+Role Management
+Permissions Management
+Access Control List (ACL)
+Laravel 8 + Bootstrap 4
+Tech Stack
+Client: HTML, CSS, JavaScript, jQuery, VueJs, Bootstrap 4
+
+Server: PHP, Laravel 8
+
+DataBase: MySql
+
+Installation
+Install Tech-Admin With Simple Steps
+
+git clone https://github.com/TechTool-India/techtool-laravel-admin.git
+cd techtool-laravel-admin
+Install All Packages of laravel
+
+composer install
+Install NPM Dependencies
+
+npm install && npm run dev
+Create .env file
+
+cp .env.example .env
+Generate Application key
+
+php artisan key:generate
+Update .env File with Database credentials and run migration with seed.
+
+php artisan migrate --seed
+All Set ! now serve laravel app on local and open app in browser.
+
+Login With Admin
+
+Username - admin@admin.com
+Password - Admin@123#
